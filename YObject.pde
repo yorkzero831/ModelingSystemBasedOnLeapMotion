@@ -1,3 +1,11 @@
+
+//  YObject.pde
+//  Modelling System Based on LeapMiton
+//
+//  Created by yorksero831 on 16/4/13.
+//  Copyright © 2016年 SakaiLab-York. All rights reserved.
+//
+
 class YObject
 {
   YID Yid = new YID();

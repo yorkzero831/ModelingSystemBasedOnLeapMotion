@@ -1,3 +1,11 @@
+
+//  Modelling_Based_on_LeapMotion.pde
+//  Modelling System Based on LeapMiton
+//
+//  Created by yorksero831 on 16/4/13.
+//  Copyright © 2016年 SakaiLab-York. All rights reserved.
+//
+
 import de.voidplus.leapmotion.*;
 LeapMotion leap;
 
@@ -32,8 +40,8 @@ void setup()
   FLayer = createGraphics(width, height, P3D);
   BLayer = createGraphics(width, height, P3D);
   //////voce system init///////
-  String url2 = "/Users/sakailab_macbook_B/Downloads/Modeling_Based_on_LeapMotion/";
-  voce.SpeechInterface.init("/Users/sakailab_macbook_B/Downloads/Modeling_Based_on_LeapMotion/libraries/voce-0.9.1/", true, true, url2, "ss");
+  String url2 = "/Users/sakailab_macbook_B/Downloads/Modelling_Based_on_LeapMotion/";
+  voce.SpeechInterface.init("/Users/sakailab_macbook_B/Downloads/Modelling_Based_on_LeapMotion/libraries/voce-0.9.1/", true, true, url2, "ss");
 }
 
 PVector hand_position_last = new PVector();
@@ -61,7 +69,7 @@ void draw()
   {
     Hand hand = leap.getRightHand();
     int countHand = leap.countHands();
-    int hid = hand.getId();
+    //int hid = hand.getId();
 
     if (countHand>1)
     {
@@ -94,9 +102,9 @@ void draw()
     zo.y = 0;
     zo.z *=2;
     zo.normalize();
-    YVector zop = new YVector(-zo.z, -zo.x, 0);  //-zo.z  ,  , zo.x
+    //YVector zop = new YVector(-zo.z, -zo.x, 0);  //-zo.z  ,  , zo.x
 
-    float angle = sqrt(dx*dx+dy*dy+dz*dz*1)*PI/240;
+    //float angle = sqrt(dx*dx+dy*dy+dz*dz*1)*PI/240;
     /////////////////////////////Gesture code///////////////////////////////////////////////
     if (hand.hasFingers())
     {
@@ -181,7 +189,7 @@ void draw()
     for(Finger finger : hand.getFingers())
     {
     PVector finger_position   = finger.getPosition();
-    int     finger_id         = finger.getId();
+    //int     finger_id         = finger.getId();
     BLayer.strokeWeight(11);
     BLayer.stroke(111,0,0);
     BLayer.point(finger_position.x - 0.5*height,finger_position.y -0.5*width,-(finger_position.z -15)*10);
