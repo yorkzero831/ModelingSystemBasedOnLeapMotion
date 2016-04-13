@@ -105,8 +105,8 @@ void setup()
   FLayer = createGraphics(width, height, P3D);
   BLayer = createGraphics(width, height, P3D);
   //////speech///////
-  String url2 = "./";
-  //voce.SpeechInterface.init("/Downloads/Modeling_Based_on_LeapMotion/libraries/voce-0.9.1/", true, true, url2, "ss");
+  String url2 = "/Users/sakailab_macbook_B/Downloads/Modeling_Based_on_LeapMotion/";
+  voce.SpeechInterface.init("/Users/sakailab_macbook_B/Downloads/Modeling_Based_on_LeapMotion/libraries/voce-0.9.1/", true, true, url2, "ss");
 }
 
 PVector hand_position_last = new PVector();
@@ -142,7 +142,10 @@ void draw()
     {
       //////////////////////////sound reglize//////////  
       getString = voce.SpeechInterface.popRecognizedString();
-      print(getString);
+      if(getString != "")
+      {
+        println(getString);
+      }
       if (getString.equals("point"))
       {
         MODE = "POINT MODE";
@@ -325,4 +328,3 @@ void draw_objects(ArrayList<YObject> List_of_Objects, PGraphics BLayer, Selector
   }
   BLayer.endShape();
 }
-
